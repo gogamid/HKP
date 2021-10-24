@@ -1,60 +1,86 @@
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class CdPlayer implements Device {
 	private static int volume=0;
 
 	@Override
 	public void louder() {
-		// TODO Auto-generated method stub
 		System.out.println("volume: "+ ++volume);
 		
 	}
 
 	@Override
 	public void quieter() {
-		// TODO Auto-generated method stub
 		System.out.println("quieter: " + --volume);
 	}
 
 	@Override
 	public int getVolume() {
-		// TODO Auto-generated method stub
 		return volume;
 	}
 
 	@Override
 	public void next() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Next title");
 	}
 
 	@Override
 	public void prev() {
-		// TODO Auto-generated method stub
+		System.out.println("Prev title");
 		
 	}
 
 	@Override
 	public String getInfoText() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public String[] getOptions() {
-		// TODO Auto-generated method stub
-		return null;
+		String[] arr = new String[20];
+		try {
+			Method m[] = Bordcomputer.class.getDeclaredMethods();
+			for (int i = 0; i < m.length; i++) {
+				arr[i] = m[i].getName();
+			}
+		} catch (Exception e) {
+			System.out.println("Exception: " + e);
+		}
+		return arr;
 	}
 
 	@Override
 	public void chooseOption(String opt) {
-		// TODO Auto-generated method stub
-		
+		CdPlayer obj = new CdPlayer();
+		Method method = null;
+		try {
+			method = obj.getClass().getDeclaredMethod(opt);
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			method.invoke(obj);
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public String play() {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("Play");
+		return "Play";
 	}
 
 }
