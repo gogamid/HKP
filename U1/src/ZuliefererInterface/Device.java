@@ -1,3 +1,4 @@
+package ZuliefererInterface;
 
 public interface Device {
 	public void louder();

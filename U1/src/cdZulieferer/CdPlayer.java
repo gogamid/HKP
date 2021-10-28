@@ -1,5 +1,8 @@
+package cdZulieferer;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+
+import ZuliefererInterface.Device;
 
 public class CdPlayer implements Device {
 	private static int volume=0;
@@ -40,7 +43,7 @@ public class CdPlayer implements Device {
 	public String[] getOptions() {
 		String[] arr = null;
 		try {
-			Method m[] = Bordcomputer.class.getDeclaredMethods();
+			Method m[] = CdPlayer.class.getDeclaredMethods();
 			arr = new String[m.length];
 			for (int i = 0; i < m.length; i++) {
 				arr[i] = m[i].getName();
