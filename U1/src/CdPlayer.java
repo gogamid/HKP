@@ -38,9 +38,10 @@ public class CdPlayer implements Device {
 
 	@Override
 	public String[] getOptions() {
-		String[] arr = new String[20];
+		String[] arr = null;
 		try {
 			Method m[] = Bordcomputer.class.getDeclaredMethods();
+			arr = new String[m.length];
 			for (int i = 0; i < m.length; i++) {
 				arr[i] = m[i].getName();
 			}

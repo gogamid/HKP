@@ -56,6 +56,12 @@ public class Bordcomputer {
 	 * introspection sehr einfach alle Methoden auslesen
 	 */
 	public void showOptions() {
+		
+		String[] arr = playingDevice.getOptions();
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println(i + ")\t" + arr[i]);
+		}
+		
 		try {
 			System.out.println("Options are: ");
 			Method m[] = Bordcomputer.class.getDeclaredMethods();
