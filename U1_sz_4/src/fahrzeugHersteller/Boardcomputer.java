@@ -8,8 +8,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 
-import ZuliefererInterface.Device;
-
 public class Boardcomputer {
     private final String[] deviceName = new String[3];
     private final Device[] installedDevices = new Device[3];
@@ -19,59 +17,54 @@ public class Boardcomputer {
     ist ein eigener Konstruktor erlaubt? (steht nicht im Klassendiagramm)
     und readConfig und setDevices müssen ja private sein, können also nicht von einer Testing Klasse aufgerufen werden
      */
-    public Boardcomputer() {
-        readConfig();
-        try {
-            setDevices();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+    public Boardcomputer(DeviceFactory df) {
+    	installedDevices[0] = (Device) df; ///??
     }
 
-    private void readConfig() {
-        String dir = "/home/timo/NextCloud/Studium/Angewandte Informatik/3. Semester/Höhere Konzepte der Programmierung/HKP_JavaProgrammingStuff/src/";
-        File configFile = new File(dir + "Geraete.config");
+//    private void readConfig() {
+//        String dir = "/home/timo/NextCloud/Studium/Angewandte Informatik/3. Semester/Höhere Konzepte der Programmierung/HKP_JavaProgrammingStuff/src/";
+//        File configFile = new File(dir + "Geraete.config");
+//
+//        try {
+//            FileReader fr = new FileReader(configFile);
+//            BufferedReader br = new BufferedReader(fr);
+//            String line;
+//            ArrayList<String> stringlist = new ArrayList<>();
+//            while ((line = br.readLine()) != null) {
+//                stringlist.add(line);
+//            }
+//            fr.close();
+//
+//            int devicesFound = 0;
+//            for (String myLine : stringlist) {
+//                if (devicesFound >= 3) {
+//                    break;
+//                }
+//                if (myLine.contains("=")) {
+//                    deviceName[devicesFound] = myLine;
+//                    devicesFound++;
+//                }
+//            }
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
-        try {
-            FileReader fr = new FileReader(configFile);
-            BufferedReader br = new BufferedReader(fr);
-            String line;
-            ArrayList<String> stringlist = new ArrayList<>();
-            while ((line = br.readLine()) != null) {
-                stringlist.add(line);
-            }
-            fr.close();
-
-            int devicesFound = 0;
-            for (String myLine : stringlist) {
-                if (devicesFound >= 3) {
-                    break;
-                }
-                if (myLine.contains("=")) {
-                    deviceName[devicesFound] = myLine;
-                    devicesFound++;
-                }
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void setDevices() throws ClassNotFoundException {
-        int i = 0;
-        for (String device : deviceName) {
-            if (device != null) {
-                String classname = device.substring(device.indexOf("=") + 1).trim();
-                try {
-                    installedDevices[i] = (Device) Class.forName(classname).getDeclaredConstructors()[0].newInstance();
-                    i++;
-                } catch (InvocationTargetException | InstantiationException | IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
+//    private void setDevices() throws ClassNotFoundException {
+//        int i = 0;
+//        for (String device : deviceName) {
+//            if (device != null) {
+//                String classname = device.substring(device.indexOf("=") + 1).trim();
+//                try {
+//                    installedDevices[i] = (Device) Class.forName(classname).getDeclaredConstructors()[0].newInstance();
+//                    i++;
+//                } catch (InvocationTargetException | InstantiationException | IllegalAccessException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//    }
 
     public void shutdown() {
         System.exit(0);

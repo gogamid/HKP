@@ -2,7 +2,7 @@ package cdZulieferer;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import ZuliefererInterface.Device;
+import fahrzeugHersteller.Device;
 
 public class CdPlayer implements Device {
 	private static int volume=0;

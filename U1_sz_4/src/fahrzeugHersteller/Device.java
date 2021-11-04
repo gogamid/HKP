@@ -1,4 +1,4 @@
-package ZuliefererInterface;
+package fahrzeugHersteller;
 
 public interface Device {
 	public void louder();
