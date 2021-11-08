@@ -30,33 +30,33 @@ public class Boardcomputer {
     }
 
     private void readConfig() {
-        String dir = "/home/timo/NextCloud/Studium/Angewandte Informatik/3. Semester/Höhere Konzepte der Programmierung/HKP_JavaProgrammingStuff/src/";
-        File configFile = new File(dir + "Geraete.config");
-
-        try {
-            FileReader fr = new FileReader(configFile);
-            BufferedReader br = new BufferedReader(fr);
-            String line;
-            ArrayList<String> stringlist = new ArrayList<>();
-            while ((line = br.readLine()) != null) {
-                stringlist.add(line);
-            }
-            fr.close();
-
-            int devicesFound = 0;
-            for (String myLine : stringlist) {
-                if (devicesFound >= 3) {
-                    break;
-                }
-                if (myLine.contains("=")) {
-                    deviceName[devicesFound] = myLine;
-                    devicesFound++;
-                }
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        String dir = "/home/timo/NextCloud/Studium/Angewandte Informatik/3. Semester/Höhere Konzepte der Programmierung/HKP_JavaProgrammingStuff/src/";
+//        File configFile = new File(dir + "Geraete.config");
+//
+//        try {
+//            FileReader fr = new FileReader(configFile);
+//            BufferedReader br = new BufferedReader(fr);
+//            String line;
+//            ArrayList<String> stringlist = new ArrayList<>();
+//            while ((line = br.readLine()) != null) {
+//                stringlist.add(line);
+//            }
+//            fr.close();
+//
+//            int devicesFound = 0;
+//            for (String myLine : stringlist) {
+//                if (devicesFound >= 3) {
+//                    break;
+//                }
+//                if (myLine.contains("=")) {
+//                    deviceName[devicesFound] = myLine;
+//                    devicesFound++;
+//                }
+//            }
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     private void setDevices() throws ClassNotFoundException {

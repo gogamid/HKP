@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import ZuliefererInterface.Device;
 
-public class Boardcomputer {
+public class Bordcomputer {
     private final String[] deviceName = new String[3];
     private final Device[] installedDevices = new Device[3];
     private Device playingDevice;
@@ -19,7 +19,7 @@ public class Boardcomputer {
     ist ein eigener Konstruktor erlaubt? (steht nicht im Klassendiagramm)
     und readConfig und setDevices müssen ja private sein, können also nicht von einer Testing Klasse aufgerufen werden
      */
-    public Boardcomputer() {
+    public Bordcomputer() {
         readConfig();
         try {
             setDevices();

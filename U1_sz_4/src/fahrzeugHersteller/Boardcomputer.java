@@ -17,8 +17,10 @@ public class Boardcomputer {
     ist ein eigener Konstruktor erlaubt? (steht nicht im Klassendiagramm)
     und readConfig und setDevices müssen ja private sein, können also nicht von einer Testing Klasse aufgerufen werden
      */
-    public Boardcomputer(DeviceFactory df) {
-    	installedDevices[0] = (Device) df; ///??
+    public Boardcomputer(DeviceFactory[] df) {
+    	installedDevices[0] =  df[0].createDevice();
+        installedDevices[1] =  df[1].createDevice();
+        playingDevice = installedDevices[0];
     }
 
 //    private void readConfig() {
