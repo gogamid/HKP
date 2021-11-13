@@ -1,5 +1,3 @@
-package crazyRadioPackage;
-
 import ZuliefererInterface.Device;
 			
 public class CrazyRadio implements Device {

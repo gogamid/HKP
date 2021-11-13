@@ -1,5 +1,3 @@
-package crazyCdPlayerPackage;
-
 import ZuliefererInterface.Device;
 
 public class CrazyCDPlayer implements Device {

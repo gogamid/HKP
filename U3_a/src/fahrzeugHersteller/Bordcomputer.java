@@ -71,6 +71,7 @@ public class Bordcomputer {
                 }
             }
         }
+        playingDevice = installedDevices[0];
     }
 
     public void shutdown() {
@@ -189,8 +190,10 @@ public class Bordcomputer {
     /*
     why is p of type String?
      */
-    public void quieter(String p) {
-        playingDevice.quieter();
+    public void quieter(int p) {
+        for (int i = 0; i < p; i++) {
+            playingDevice.quieter();
+        }
     }
 
     public void showVolume() {
