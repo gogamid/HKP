@@ -5,8 +5,8 @@ public class BordcomputerTest {
 		Bordcomputer b = new Bordcomputer();
 
 		/*
-		a) Weil open ist immer falsch. Deswegen kann man nicht abspielen. Bordcomputer kann nicht open true machen.
-		b) Radio ist nicht abspielbar, weil volume ist 0. Ich kann auch lauder nicht machen, weil es ist mute.
+		a) CD: Weil open ist immer falsch. Deswegen kann man nicht abspielen. Bordcomputer kann nicht open true machen.
+		Radio:  ist nicht abspielbar, weil volume ist 0. Ich kann auch lauder nicht machen, weil es ist mute.
 		Ich kann nicht unmute machen, weil es gibt kein so was funktion in Bordcomputer
 		* */
 		
