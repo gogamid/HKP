@@ -1,0 +1,3 @@
+@Log
+public class Testprogramm {
+}
