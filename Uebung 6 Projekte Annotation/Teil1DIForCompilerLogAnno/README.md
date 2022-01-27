@@ -11,6 +11,11 @@
 - ohne Pakete und ohne src
 - create META-INF/services/javax.annotation.processing.Processor und content ist "LogProcessor"
 - compile: `javac -proc:none Log*.java && javac Testprogramm.java`
+### c)  Erklären Sie, was mit der Aussage "Der Compiler ist auf die Nutzung von Annotationsprozessoren, die vom Nutzer geschrieben werden vorbereitet." gemeint ist.
+
+????
+
+
 
   
 
