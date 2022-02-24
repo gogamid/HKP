@@ -1,2 +1,10 @@
-package PACKAGE_NAME;public @interface Action {
+import java.lang.annotation.*;
+
+@Documented
+@Retention(RetentionPolicy.RUNTIME )
+
+@Target(ElementType.TYPE)
+public @interface Action {
+    String value();
+
 }

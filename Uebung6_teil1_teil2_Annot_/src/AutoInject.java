@@ -1,2 +1,6 @@
-package PACKAGE_NAME;public @interface AutoInject {
+import java.lang.annotation.*;
+
+@Target({ElementType.TYPE})
+public @interface AutoInject {
+     Class toInjectFor();
 }

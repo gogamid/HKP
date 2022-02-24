@@ -1,5 +1,3 @@
-package a;
-
 public class A1 {
     private B_Service b_service;
     private C_Service c_service;

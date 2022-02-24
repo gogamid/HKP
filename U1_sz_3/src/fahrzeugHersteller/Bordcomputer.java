@@ -58,6 +58,7 @@ public class Bordcomputer {
         }
     }
 
+    //reflection
     private void setDevices() throws ClassNotFoundException {
         int i = 0;
         for (String device : deviceName) {
@@ -98,6 +99,7 @@ public class Bordcomputer {
         System.out.println("No device available");
     }
 
+    //introspection
     public void showOptions() {
         int internalOptionCounter = 0;
         System.out.println("\nBoardcomputer options:");

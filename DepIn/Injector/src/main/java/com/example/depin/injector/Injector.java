@@ -1,6 +1,6 @@
 package com.example.depin.injector;
 
-import com.example.depin.service.*;
+import main.java.com.example.depin.service.*;
 
 import java.util.ServiceLoader;
 

@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public class A {
+@Action("class anno")
+public class A {
+    public void run() {
+
+    }
+
 }

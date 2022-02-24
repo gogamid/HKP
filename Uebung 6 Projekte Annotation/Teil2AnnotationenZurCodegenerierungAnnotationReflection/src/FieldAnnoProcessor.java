@@ -13,7 +13,7 @@ import java.util.Set;
 public class FieldAnnoProcessor extends AbstractProcessor {
 
 //muss für meherere fields funktionieren
-// TODO: 27.01.22 change and make it dynamic 
+// TODO: 27.01.22 change and make it dynamic
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         for (TypeElement annotation : annotations) {
@@ -21,9 +21,9 @@ public class FieldAnnoProcessor extends AbstractProcessor {
                 String currentClassName = element.getEnclosingElement().toString(); //Animal
                 String subclassName = currentClassName + "Constructor"; //AnimalConstructor
                 String annotationValue = element.getAnnotationMirrors().get(0).getElementValues().values().toArray()[0].toString(); //2
-                Filer filer = processingEnv.getFiler();
+                Filer filer = processingEnv.getFiler(); //nicht mit new, weil Source Code muss zu Compilerzeit generiert werden.
                 try {
-                    JavaFileObject sourceFile = filer.createSourceFile(subclassName);
+                    JavaFileObject sourceFile = filer.createSourceFile(subclassName); // für .java
                     try (OutputStream out = sourceFile.openOutputStream()) {
                         out.write(String.format("import java.lang.reflect.Field; \n public class %s extends %s { \n public %s(){ \n Field[] fields = this.getClass().getSuperclass().getDeclaredFields();\n" +
                                 "        for(Field field : fields){ field.setAccessible(true);\n" +

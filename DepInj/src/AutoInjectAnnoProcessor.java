@@ -1,14 +1,8 @@
-package a;
-
 import javax.annotation.processing.*;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.type.MirroredTypeException;
 import javax.lang.model.type.TypeMirror;
-import javax.tools.FileObject;
-import javax.tools.StandardLocation;
-import java.io.IOException;
-import java.io.OutputStream;
 import java.util.Set;
 @SupportedAnnotationTypes("AutoInject")
 public class AutoInjectAnnoProcessor extends AbstractProcessor {
@@ -28,7 +22,7 @@ public class AutoInjectAnnoProcessor extends AbstractProcessor {
 
 //                Filer filer = processingEnv.getFiler();
 //                try {
-//                    FileObject sourceFile = filer.createResource(StandardLocation.SOURCE_OUTPUT, "", "a.B_Service");
+//                    FileObject sourceFile = filer.createResource(StandardLocation.SOURCE_OUTPUT, "", "javax.annotation.processing.Processor");
 //                    try (OutputStream out = sourceFile.openOutputStream()) {
 //                        out.write(String.format(value.toString()).getBytes());
 //                    }

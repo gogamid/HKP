@@ -1,0 +1,4 @@
+@Log
+public class Main {
+
+}

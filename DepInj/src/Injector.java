@@ -1,6 +1,3 @@
-package i;
-
-import a.*;
 import java.util.ServiceLoader;
 
 public class Injector {
@@ -10,7 +7,7 @@ public class Injector {
         final ServiceLoader<B_Service> b_services = ServiceLoader.load(B_Service.class);
         for (B_Service service : b_services){
             a1.setB_service(service);
-            System.out.println();
+            System.out.println(service.opB2());
         }
 
     }

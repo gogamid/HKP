@@ -11,8 +11,9 @@ public class BordcomputerTest {
 		* */
 		
 //		// play forwards and backwards on actual device
-		b.changeDevice();
-		b.louder(1);
+//		b.changeDevice();
+		b.play();
+		b.louder(11);
 		b.play();
 		b.next();
 		b.play();
@@ -20,23 +21,23 @@ public class BordcomputerTest {
 		b.play();
 		b.prev();
 		b.play();
-//
-//		// moving to next device
+
+		// moving to next device
 //		b.changeDevice();
-//		b.play();
+		b.play();
 //		b.changeDevice();
-//		b.play();
-//
-//		// testing volume
-//		b.showVolume();
-//		b.louder(3);
-//		b.showVolume();
-//		b.quieter(2);
-//		b.showVolume();
-//
-//		// testing options
-//		b.showOptions();
-//		b.enterOption(4);
+		b.play();
+
+		// testing volume
+		b.showVolume();
+		b.louder(3);
+		b.showVolume();
+		b.quieter(2);
+		b.showVolume();
+
+		// testing options
+		b.showOptions();
+		b.enterOption(4);
 		
 	}
 

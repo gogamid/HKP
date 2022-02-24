@@ -1,0 +1,1 @@
+let multiplyByTen x = x * 10;;

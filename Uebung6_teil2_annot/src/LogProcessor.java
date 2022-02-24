@@ -1,8 +1,10 @@
+import javax.annotation.processing.AbstractProcessor;
+import javax.annotation.processing.RoundEnvironment;
+import javax.annotation.processing.SupportedAnnotationTypes;
+import javax.lang.model.element.Element;
+import javax.lang.model.element.TypeElement;
+import javax.tools.Diagnostic;
 import java.util.Set;
-
-import javax.annotation.processing.*;
-import javax.lang.model.element.*;
-import javax.tools.*;
 
 @SupportedAnnotationTypes("Log")
 public class LogProcessor extends AbstractProcessor {
